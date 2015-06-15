@@ -46,12 +46,6 @@ $_SESSION['form_token'] = $form_token;
 		}
 		?>
 	</div>
-	<div class="row">
-		<h1>Page Source</h1>
-		<p>
-			<?php show_source(__FILE__); ?>
-		</p>
-	</div>
 
 
 <!-- Include footer -->

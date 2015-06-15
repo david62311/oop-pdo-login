@@ -1,2 +1,6 @@
-# oop-pdo-login
-Simple login system using PHP PDO in a OOP fashion.
+# Login system using PHP
+Specifications:
+
+-PDO Database connection
+-OOP user and session creation
+

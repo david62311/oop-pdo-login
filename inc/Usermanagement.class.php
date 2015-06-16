@@ -84,7 +84,7 @@ class User {
 class Session {
 	public function __construct($login_username,$login_password) {
 		$validated = false;
-		if( !isset( $login_username, $login_password)) {
+		if( !isset( $login_username, $login_password) || !(strlen($login_username) < 20) || !(strlen($login_password) < 40)) {
 			$message = 'Please enter a valid username and password';
 		} else {
 			$validated = true;

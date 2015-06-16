@@ -21,10 +21,10 @@ $_SESSION['form_token'] = $form_token;
 						<input type="radio" id="register" name="action" value="register"/> Register
 					</p>
 					<p>
-						<input type="text" id="username" name="username" value="" maxlength="20" placeholder="Username" />
+						<input type="text" id="username" name="username" value="" maxlength="20" placeholder="Username (max 20 char)" />
 					</p>
 					<p>
-						<input type="password" id="password" name="password" value="" maxlength="20" placeholder="Password" />
+						<input type="password" id="password" name="password" value="" maxlength="40" placeholder="Password (max 40 char)" />
 					</p>
 					<p>
 						<input type="hidden" name="form_token" value="<?php echo $form_token; ?>" />
@@ -45,6 +45,12 @@ $_SESSION['form_token'] = $form_token;
 			</form>';
 		}
 		?>
+	</div>
+	<div class="row">
+		<h1>Page Source</h1>
+		<p>
+			<?php show_source(__FILE__); ?>
+		</p>
 	</div>
 
 

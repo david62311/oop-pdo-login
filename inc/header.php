@@ -24,7 +24,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="https://www.skillcollector.com">Mentor's Code</a>
+				<a class="navbar-brand" href="">Mentor's Code</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->

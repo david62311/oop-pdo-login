@@ -50,7 +50,10 @@ class User {
 			$password = filter_var(trim($posted_password), FILTER_SANITIZE_STRING);
 
 		    // Encrypt the password
-			$password = sha1( $password );
+			$options = [
+			'cost' => 12,
+			];
+			$password = password_hash($password, PASSWORD_BCRYPT, $options);
 
 	 	   // Open database connection
 			$db = new Db();
@@ -81,7 +84,7 @@ class User {
 class Session {
 	public function __construct($login_username,$login_password) {
 		$validated = false;
-		if( (!isset( $login_username, $login_password)) || (strlen($login_username + $login_password) < 40) ) {
+		if( !isset( $login_username, $login_password)) {
 			$message = 'Please enter a valid username and password';
 		} else {
 			$validated = true;
@@ -92,9 +95,6 @@ class Session {
 			$login_username = filter_var(trim($login_username), FILTER_SANITIZE_STRING);
 			$login_password = filter_var(trim($login_password), FILTER_SANITIZE_STRING);
 
-    // Encrypt the password
-			$login_password = sha1( $login_password );
-
     // Open database connection
 			$db = new Db();
 
@@ -104,12 +104,17 @@ class Session {
 				$message = "This user does not exist!";
 			} else {
 				$db->bind("username",$login_username);
-				$db->bind("password",$login_password);
-				$logged_in_id = $db->single("SELECT user_id FROM users WHERE username = :username AND password = :password");
+				$password_hash = $db->single("SELECT password FROM users WHERE username = :username");
+				if (password_verify($login_password, $password_hash)) {
+					$db->bind("username",$login_username);
+					$logged_in_id = $db->single("SELECT user_id FROM users WHERE username = :username");
+				} else {
+					$message = "Wrong password";
+				}
 			}
 
-			if($logged_in_id == false) {
-				$message = 'Login Failed';
+			if(!isset($logged_in_id)) {
+				$message = $message . ' Login Failed';
 			} else {
 				$_SESSION['user_id'] = $logged_in_id;
 				$this->logged_in_id = $logged_in_id;

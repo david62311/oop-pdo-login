@@ -24,10 +24,10 @@ $_SESSION['form_token'] = $form_token;
 						<input type="text" id="username" name="username" value="" maxlength="20" placeholder="Username (max 20 char)" />
 					</p>
 					<p>
-						<input type="password" id="password" name="password" value="" maxlength="40" placeholder="Password (max 40 char)" />
+						<input type="password" id="password" name="password" value="" maxlength="20" placeholder="Password (max 20 char)" />
 					</p>
 					<p>
-						<input type="hidden" name="form_token" value="<?php echo $form_token; ?>" />
+						<input type="hidden" name="form_token" value="' . $form_token . '" />
 						<input type="submit" value="&rarr; Login / register" />
 					</p>
 				</fieldset>

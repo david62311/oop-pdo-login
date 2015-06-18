@@ -44,7 +44,7 @@ class User {
 			$validated = true;
 		}
 
-		if ($validated = true) {
+		if ($validated) {
 			// Sanitize the username and password
 			$username = filter_var(trim($posted_username), FILTER_SANITIZE_STRING);
 			$password = filter_var(trim($posted_password), FILTER_SANITIZE_STRING);
@@ -90,7 +90,7 @@ class Session {
 			$validated = true;
 		}
 
-		if ($validated = true) {
+		if ($validated) {
 	// Sanitize the username and password
 			$login_username = filter_var(trim($login_username), FILTER_SANITIZE_STRING);
 			$login_password = filter_var(trim($login_password), FILTER_SANITIZE_STRING);

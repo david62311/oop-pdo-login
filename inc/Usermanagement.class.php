@@ -33,7 +33,7 @@ class User {
 			$message = 'Invalid form submission';
 		} elseif (strlen( $posted_username) > 20 || strlen($posted_username) < 4) {
 			$message = 'Incorrect Length for Username';
-		} elseif (strlen( $posted_password) > 20 || strlen($posted_password) < 4) {
+		} elseif (strlen( $posted_password) > 100 || strlen($posted_password) < 4) {
 			$message = 'Incorrect Length for Password';
 		} elseif (ctype_alnum($posted_username) != true) {
 			$message = "Username must be alpha numeric";
@@ -81,7 +81,7 @@ class User {
 class Session {
 	public function __construct($login_username,$login_password) {
 		$validated = false;
-		if( !isset( $login_username, $login_password) || !(strlen($login_username) < 20) || !(strlen($login_password) < 40)) {
+		if( !isset( $login_username, $login_password) || !(strlen($login_username) < 20) || !(strlen($login_password) < 100)) {
 			$message = 'Please enter a valid username and password';
 		} else {
 			$validated = true;

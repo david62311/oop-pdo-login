@@ -1,3 +1,6 @@
+<!-- Include header -->
+<?php include_once 'header.php'; ?>
+
 <?php
 require("Usermanagement.class.php");
 session_start();
@@ -23,3 +26,14 @@ if (isset($_POST['action'])) {
 echo SessionStatus()?"<br>Current status logged in":"<br>Current status logged out";
 
 ?>
+
+	<div class="row">
+		<h1>Page Source</h1>
+		<p>
+			<?php show_source(__FILE__); ?>
+		</p>
+	</div>
+
+
+<!-- Include footer -->
+<?php include_once 'footer.php'; ?>

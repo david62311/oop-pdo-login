@@ -31,6 +31,7 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 				<li class="active"><a href="/ooplogin">Home/login <span class="sr-only">(current)</span></a></li>
+				<li class=""><a href="https://github.com/actuallymentor/oop-pdo-login">Code on Github</a></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->

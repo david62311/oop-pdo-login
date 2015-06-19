@@ -37,9 +37,6 @@ class User {
 			$message = 'Incorrect Length for Password';
 		} elseif (ctype_alnum($posted_username) != true) {
 			$message = "Username must be alpha numeric";
-		} 
-		elseif (ctype_alnum($posted_password) != true) {
-			$message = "Password must be alpha numeric";
 		} else {
 			$validated = true;
 		}

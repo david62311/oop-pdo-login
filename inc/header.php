@@ -1,5 +1,7 @@
 <html>
 
+<!-- Header include that loads Boostrap and jQuery -->
+
 <head>
 
 	<!-- Latest compiled and minified CSS -->

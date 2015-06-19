@@ -1,5 +1,8 @@
 <?php
+// Start the session
 session_start();
+
+// Require the User management class
 require("inc/Usermanagement.class.php");
 
 // Set form token and set it to session
@@ -12,6 +15,8 @@ $_SESSION['form_token'] = $form_token;
 
 	<div class="row">
 		<?php
+
+		// Show the login form if user is not logged in
 		if (!SessionStatus()) {
 			echo '<h1>Log in / Sign up</h1>
 			<form action="inc/user_actions.php" method="post" role="form">
@@ -32,7 +37,11 @@ $_SESSION['form_token'] = $form_token;
 					</p>
 				</fieldset>
 			</form>';
-		} else {
+		}
+
+		// Show a welcome message and logout button if a user is logged in
+
+		else {
 			echo '<h1>You are logged in</h1>
 			<form action="inc/user_actions.php" method="post" role="form">
 				<fieldset>
@@ -46,6 +55,8 @@ $_SESSION['form_token'] = $form_token;
 		}
 		?>
 	</div>
+
+	<!-- Echo the page source, this is for demo purposes only -->
 	<div class="row">
 		<h1>Page Source</h1>
 		<p>

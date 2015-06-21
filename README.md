@@ -31,5 +31,3 @@ password char(60) NOT NULL
 );
 ```
 
-# License
-Use this as you like. For commercial use contact me first.
